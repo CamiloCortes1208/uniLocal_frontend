@@ -1,25 +1,63 @@
-<div class="container">
-    <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-md-3 mb-2 mb-md-0">
-            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+<header class="py-3 mb-3 border-bottom">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap" />
                 </svg>
             </a>
+            <ul class="dropdown-menu text-small shadow">
+                <li><a class="dropdown-item active" href="#" aria-current="page">Mapa</a></li>
+                <li><a class="dropdown-item" href="#">Muro</a></li>
+                <li><a class="dropdown-item" href="#">Sitios destacados</a></li>
+                <li><a class="dropdown-item" href="#">Eventos</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Mis eventos</a></li>
+                <li><a class="dropdown-item" href="#">Mis negocios</a></li>
+            </ul>
         </div>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a href="#" class="nav-link px-2">Features</a></li>
-            <li><a href="#" class="nav-link px-2">Pricing</a></li>
-            <li><a href="#" class="nav-link px-2">FAQs</a></li>
-            <li><a href="#" class="nav-link px-2">About</a></li>
-        </ul>
-
-        <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+        <div class="d-flex align-items-center justify-content-center">
+            <form class="me-2" role="search">
+                <input type="search" class="form-control" placeholder="Buscar un negocio..." aria-label="Search">
+            </form>
+            <form class="me-2" role="search">
+                <input type="search" class="form-control" placeholder="Distancia del negocio..."
+                    aria-label="Search field 2">
+            </form>
+            <form class="me-2" role="search">
+                <select class="form-control" aria-label="Categoría del negocio">
+                    <option value="" disabled selected>Categoría del negocio...</option>
+                    <option value="restaurant">Restaurante</option>
+                    <option value="cafe">Café</option>
+                    <option value="store">Tienda</option>
+                    <option value="salon">Salón de belleza</option>
+                    <option value="gym">Gimnasio</option>
+                    <!-- Añade más opciones según sea necesario -->
+                </select>
+            </form>
         </div>
-    </header>
-</div>
+
+        <div class="flex-shrink-0 dropdown">
+            <div class="d-flex">
+                <button class="btn btn-primary me-2">Iniciar sesión</button>
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item" routerLink="/perfil">Ver perfil</a></li>
+                    <li><a class="dropdown-item" routerLink="/negocios-perfil">Mis negocios</a></li>
+                    <li><a class="dropdown-item" href="#">Mis eventos</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

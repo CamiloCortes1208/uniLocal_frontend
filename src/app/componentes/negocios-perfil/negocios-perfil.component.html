@@ -1,0 +1,75 @@
+<div class="container text-center">
+    <div class="col">
+        <div class="container text-center">
+            <h2>Mis negocios</h2>
+        </div>
+    </div>
+    <div class="col">
+        <div class="container text-end">
+            <a class="btn btn-primary" routerLink="/crear-negocio" role="button">Agregar negocio</a>
+        </div>
+    </div>
+    <div class="row align-items-start">
+        <div class="col">
+            <h3>Negocios publicados</h3>
+            <div class="container text-start">
+                @for (item of negocios; track $index) {
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.nombre}}</h5>
+                                <p class="card-text">{{item.descripcion}}</p>
+                                <p class="card-text"><small
+                                        class="text-body-secondary">{{item.calificacionPromedio}}</small>
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <!-- Esta línea establece la alineación de los botones a la derecha -->
+                                    <button type="button" class="btn btn-primary mx-1">Actualizar</button>
+                                    <!-- mx-1 agrega un pequeño espacio entre botones -->
+                                    <button type="button" class="btn btn-secondary mx-1">Eliminar</button>
+                                    <button type="button" class="btn btn-danger mx-1">Responder comentarios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        <div class="col">
+            <h3>Negocios rechazados</h3>
+            <div class="container text-start">
+                @for (item of negocios; track $index) {
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.nombre}}</h5>
+                                <p class="card-text">{{item.descripcion}}</p>
+                                <p class="card-text"><small
+                                        class="text-body-secondary">{{item.calificacionPromedio}}</small>
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <!-- Esta línea establece la alineación de los botones a la derecha -->
+                                    <button type="button" class="btn btn-primary mx-1">Actualizar</button>
+                                    <!-- mx-1 agrega un pequeño espacio entre botones -->
+                                    <button type="button" class="btn btn-secondary mx-1">Eliminar</button>
+                                    <button type="button" class="btn btn-danger mx-1">Responder comentarios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
