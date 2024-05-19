@@ -42,25 +42,28 @@
             <div class="mb-3 row">
                 <label class="col-sm-2 col-form-label">Correo electrónico: </label>
                 <div class="col-sm-10">
-                    <input #email="ngModel" class= "form-control" [ngClass]="email.invalid &&
-                    email.dirty ? 'is-invalid' : ''" type="email" name="email"
-                     [(ngModel)]="registroClienteDTO.email" required />
+                    <input #email="ngModel" class="form-control" [ngClass]="email.invalid &&
+                    email.dirty ? 'is-invalid' : ''" type="email" name="email" [(ngModel)]="registroClienteDTO.email"
+                        required />
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Correo electrónico: </label>
+                <label class="col-sm-2 col-form-label">Contraseña: </label>
                 <div class="col-sm-10">
-                    <input #password="ngModel" class= "form-control" [ngClass]="password.invalid &&
-                    password.dirty ? 'is-invalid' : ''" type="password" name="password"
-                     [(ngModel)]="registroClienteDTO.password " required />
+                    <div>
+                        <label>Contraseña: </label>
+                        <input type="password" name="password" [(ngModel)]="registroClienteDTO.password" />
+                        </div>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Correo electrónico: </label>
+                <label class="col-sm-2 col-form-label">Confirmar contraseña: </label>
                 <div class="col-sm-10">
-                    <input #confirmaPassword="ngModel" class= "form-control" [ngClass]="confirmaPassword.invalid &&
-                    confirmaPassword.dirty ? 'is-invalid' : ''" type="password" name="confirmaPassword"
-                     [(ngModel)]="registroClienteDTO.password " required />
+                    <div>
+                        <label >Repetir contraseña: </label>
+                        <input type="password" name="confirmaPassword"
+                        [(ngModel)]="registroClienteDTO.confirmaPassword" required />
+                        </div>
                 </div>
             </div>
             @if (!sonIguales()) { <div class="alert alert-danger" role="alert">Las contraseñas no
@@ -69,5 +72,105 @@
                 <i class="fa-solid fa-circle-plus me-1"></i>Registrarse
             </button>
         </form>
+    </div>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+
+    <div class="card border-dark" style="width: 140rem;">
+
+        <div class="card-body">
+
+            <div class="row mb-4">
+                <div class="text-center">
+                    <h3 class="card-title"><i class="fa-solid fa-user-plus me-3"></i>
+                        Registro de un nuevo cliente</h3>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+
+                <div class="col">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre</span>
+                        <input #nombre="ngModel" class="form-control" [ngClass]="nombre.invalid && nombre.dirty
+                        ? 'is-invalid' : ''" type="text" name="nombre" [(ngModel)]="registroClienteDTO.nombre" required />
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre de usuario</span>
+                        <input #nickname="ngModel" class="form-control" [ngClass]="nickname.invalid &&
+                        nickname.dirty ? 'is-invalid' : ''" type="text" name="nickname"
+                                [(ngModel)]="registroClienteDTO.nickname" required />
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Ciudad de residencia</span>
+                        <select class="form-select" name="ciudad" required
+                        [(ngModel)]="registroClienteDTO.ciudadResidencia">
+
+                        <option value="" selected>Seleccione una ciudad</option>
+                        @for (item of ciudades; track $index) { <option [value]="item">{{item}}</option> }
+                    </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Correo electrónico</span>
+                        <input #email="ngModel" class="form-control" [ngClass]="email.invalid &&
+                        email.dirty ? 'is-invalid' : ''" type="email" name="email" [(ngModel)]="registroClienteDTO.email"
+                            required />
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                        <input #password="ngModel" class="form-control" [ngClass]="password.invalid &&
+                        password.dirty ? 'is-invalid' : ''" type="password" name="password"
+                            [(ngModel)]="registroClienteDTO.password " required />
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <!--Hay que configurarlo para que cambie la imagen en base al botón-->
+                    <div class="row">
+                        <img src="..." class="card-img-top" alt="...">
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Agregar
+                                imagen</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Confirmar contraseña</span>
+                            <input #confirmaPassword="ngModel" class="form-control" [ngClass]="confirmaPassword.invalid &&
+                            confirmaPassword.dirty ? 'is-invalid' : ''" type="password" name="confirmaPassword"
+                                [(ngModel)]="registroClienteDTO.password " required />
+                        </div>
+                        @if (!sonIguales()) { <div class="alert alert-danger" role="alert">Las contraseñas no
+                            coinciden</div> }
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row mb-4">
+
+                <button class="btn btn-primary" type="submit" [disabled]="f.invalid || !sonIguales()">
+                    <i class="fa-solid fa-circle-plus me-1"></i>Registrarse
+                </button>
+
+            </div>
+
+            
+        </div>
     </div>
 </div>
