@@ -1,0 +1,95 @@
+<div class="container text-center">
+
+    <div class="col">
+        <div class="container text-center">
+            <h2>Mis negocios</h2>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="container text-end">
+            <a class="btn btn-primary" routerLink="/crear-negocio" role="button">Agregar negocio</a>
+        </div>
+    </div>
+
+    <div class="row align-items-start">
+
+        <div class="col">
+            <div class="container text-start">
+                <h3>Negocios publicados</h3>
+                <div class="container text-start">
+                    <!--Aquí se listan los negocios pendientes-->
+                    @for (item of negocios; track $index) {
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4 ">
+                                <img src="..." class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{item.nombre}}</h5>
+                                    <p class="card-text">{{item.descripcion}}</p>
+                                    <div class="d-flex">
+                                        <button type="button" class="btn btn-success">Aprobar</button>
+                                        <button type="button" class="btn btn-danger mx-1">Rechazar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="container text-start">
+                <div class="row">
+                    <h3>Negocios aprobados</h3>
+                    <div class="container text-start">
+                        <!--Aquí se listan los negocios aprobados-->
+                        @for (item of negocios; track $index) {
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4 ">
+                                        <img src="..." class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{item.nombre}}</h5>
+                                            <p class="card-text">{{item.descripcion}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h3>Negocios rechazados</h3>
+                    <div class="container text-start">
+                        <!--Aquí se listan los negocios rechazados-->
+                        @for (item of negocios; track $index) {
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4 ">
+                                        <img src="..." class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{item.nombre}}</h5>
+                                            <p class="card-text">{{item.descripcion}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
