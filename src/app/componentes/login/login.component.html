@@ -1,18 +1,37 @@
-<main class="form-signin w-100 m-auto">
-    <form #f="ngForm" (ngSubmit)="ingresar()">
-        <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    
+    <div class="card border-dark" style="width: 40rem;">
+        
+        <div class="card-body">
+            
+            <form #f="ngForm" (ngSubmit)="ingresar()">
+                
+                <div class="text-center">
+                    <h3 class="card-title">Inicio de sesión</h3>
+                </div>
 
-        <div class="form-floating">
-            <label for="floatingInput">Correo electrónico </label>
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-            name="email" [(ngModel)]="loginDTO.email" required />
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control border-dark" id="floatingInput" placeholder="name@example.com"
+                        name="email" [(ngModel)]="loginDTO.email" required />
+                    <label for="floatingInput">Correo electrónico </label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control border-dark" id="floatingPassword" placeholder="Password"
+                        name="password" [(ngModel)]="loginDTO.password" required />
+                    <label for="floatingPassword">Contraseña</label>
+                </div>
+
+                <div class="text-center">
+
+                    <button class="btn btn-primary m-2 " type="submit">Ingresar</button>
+
+                    <p>¿Nuevo en la aplicación?</p>  
+    
+                    <button type="button" class="btn btn-primary m-2 " routerLink="/registro">Registrarse</button>
+    
+                </div>
+            </form>
         </div>
-        <div class="form-floating">
-            <label for="floatingPassword">Contraseña</label>
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-            name="password" [(ngModel)]="loginDTO.password" required />
-        </div>
-        <button class="btn btn-primary w-100 py-2" type="submit">Ingresar</button>
-        <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
-    </form>
-</main>
+    </div>
+</div>
