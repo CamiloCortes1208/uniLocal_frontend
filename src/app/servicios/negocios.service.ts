@@ -47,4 +47,11 @@ export class NegociosService {
     this.negocios = this.negocios.filter(n => n.codigoNegocio !== codigo);
   }
 
+  buscar(cadenaBusqueda: string): ItemNegocioDTO[] {
+    const palabraLower = cadenaBusqueda.toLowerCase();
+    return this.negocios.filter(negocio =>
+      negocio.nombre.toLowerCase().includes(palabraLower)
+    );
+  }
+
 }
