@@ -13,6 +13,7 @@ import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.co
 import { NegociosPerfilModeradorComponent } from './componentes/negocios-perfil-moderador/negocios-perfil-moderador.component';
 import { RechazarNegocioComponent } from './componentes/rechazar-negocio/rechazar-negocio.component';
 import { EliminarNegocioComponent } from './componentes/eliminar-negocio/eliminar-negocio.component';
+import { RecuperarPasswordComponent } from './componentes/recuperar-password/recuperar-password.component';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
     { path: 'sitios-destacados', component: SitiosDestacadosComponent},
     { path: 'eventos', component: EventosComponent},
     { path: 'login', component: LoginComponent },
+    { path: 'recuperar-password', component: RecuperarPasswordComponent},
     { path: 'registro', component: RegistroComponent },
     { path: 'perfil', component: VerPerfilComponent},
     { path: 'negocios-perfil', component: NegociosPerfilComponent},
