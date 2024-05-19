@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { NegociosService } from '../../servicios/negocios.service';
 import { ItemNegocioDTO } from '../../dto/item-negocio-dto';
+import { RechazarNegocioComponent } from "../rechazar-negocio/rechazar-negocio.component";
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-negocios-perfil-moderador',
-  standalone: true,
-  imports: [],
-  templateUrl: './negocios-perfil-moderador.component.html',
-  styleUrl: './negocios-perfil-moderador.component.css'
+    selector: 'app-negocios-perfil-moderador',
+    standalone: true,
+    templateUrl: './negocios-perfil-moderador.component.html',
+    styleUrl: './negocios-perfil-moderador.component.css',
+    imports: [RechazarNegocioComponent, CommonModule, RouterLink]
 })
 export class NegociosPerfilModeradorComponent {
   negocios: ItemNegocioDTO[];
@@ -20,4 +23,5 @@ export class NegociosPerfilModeradorComponent {
   public listarNegocios() {
     this.negocios = this.negocioService.listar();
   }
+  
 }

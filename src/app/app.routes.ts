@@ -11,6 +11,7 @@ import { EventosComponent } from './componentes/eventos/eventos.component';
 import { EventosPerfilComponent } from './componentes/eventos-perfil/eventos-perfil.component';
 import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.component';
 import { NegociosPerfilModeradorComponent } from './componentes/negocios-perfil-moderador/negocios-perfil-moderador.component';
+import { RechazarNegocioComponent } from './componentes/rechazar-negocio/rechazar-negocio.component';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -25,6 +26,7 @@ export const routes: Routes = [
     { path: 'eventos-perfil', component: EventosPerfilComponent},
     { path: 'crear-evento', component: CrearEventoComponent},
     { path: 'negocios-perfil-moderador', component: NegociosPerfilModeradorComponent},
+    { path: 'rechazar-negocio', component: RechazarNegocioComponent},
     { path: "**", pathMatch: "full", redirectTo: "" },
     { path: "busqueda/:texto", component: BusquedaComponent }
 ];
