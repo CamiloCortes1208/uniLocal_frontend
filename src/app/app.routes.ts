@@ -15,6 +15,7 @@ import { RechazarNegocioComponent } from './componentes/rechazar-negocio/rechaza
 import { EliminarNegocioComponent } from './componentes/eliminar-negocio/eliminar-negocio.component';
 import { RecuperarPasswordComponent } from './componentes/recuperar-password/recuperar-password.component';
 import { RestablecerPasswordComponent } from './componentes/restablecer-password/restablecer-password.component';
+import { EliminarPerfilComponent } from './componentes/eliminar-perfil/eliminar-perfil.component';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -26,6 +27,7 @@ export const routes: Routes = [
     { path: 'restablecer-password', component: RestablecerPasswordComponent},
     { path: 'registro', component: RegistroComponent },
     { path: 'perfil', component: VerPerfilComponent},
+    { path: 'eliminar-perfil', component: EliminarPerfilComponent},
     { path: 'negocios-perfil', component: NegociosPerfilComponent},
     { path: 'crear-negocio', component: CrearNegocioComponent},
     { path: 'eliminar-negocio', component: EliminarNegocioComponent},
