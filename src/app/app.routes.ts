@@ -9,6 +9,7 @@ import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { SitiosDestacadosComponent } from './componentes/sitios-destacados/sitios-destacados.component';
 import { EventosComponent } from './componentes/eventos/eventos.component';
 import { EventosPerfilComponent } from './componentes/eventos-perfil/eventos-perfil.component';
+import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.component';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -19,8 +20,9 @@ export const routes: Routes = [
     { path: 'registro', component: RegistroComponent },
     { path: 'perfil', component: VerPerfilComponent},
     { path: 'negocios-perfil', component: NegociosPerfilComponent},
-    { path: 'eventos-perfil', component: EventosPerfilComponent},
     { path: 'crear-negocio', component: CrearNegocioComponent},
+    { path: 'eventos-perfil', component: EventosPerfilComponent},
+    { path: 'crear-evento', component: CrearEventoComponent},
     { path: "**", pathMatch: "full", redirectTo: "" },
     { path: "busqueda/:texto", component: BusquedaComponent }
 ];
