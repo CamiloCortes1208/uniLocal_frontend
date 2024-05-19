@@ -16,6 +16,7 @@ import { EliminarNegocioComponent } from './componentes/eliminar-negocio/elimina
 import { RecuperarPasswordComponent } from './componentes/recuperar-password/recuperar-password.component';
 import { RestablecerPasswordComponent } from './componentes/restablecer-password/restablecer-password.component';
 import { EliminarPerfilComponent } from './componentes/eliminar-perfil/eliminar-perfil.component';
+import { ActualizarNegocioComponent } from './componentes/actualizar-negocio/actualizar-negocio.component';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -30,6 +31,7 @@ export const routes: Routes = [
     { path: 'eliminar-perfil', component: EliminarPerfilComponent},
     { path: 'negocios-perfil', component: NegociosPerfilComponent},
     { path: 'crear-negocio', component: CrearNegocioComponent},
+    { path: 'actualizar-negocio', component: ActualizarNegocioComponent},
     { path: 'eliminar-negocio', component: EliminarNegocioComponent},
     { path: 'eventos-perfil', component: EventosPerfilComponent},
     { path: 'crear-evento', component: CrearEventoComponent},
