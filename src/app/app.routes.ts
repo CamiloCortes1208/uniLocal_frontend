@@ -12,6 +12,7 @@ import { EventosPerfilComponent } from './componentes/eventos-perfil/eventos-per
 import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.component';
 import { NegociosPerfilModeradorComponent } from './componentes/negocios-perfil-moderador/negocios-perfil-moderador.component';
 import { RechazarNegocioComponent } from './componentes/rechazar-negocio/rechazar-negocio.component';
+import { EliminarNegocioComponent } from './componentes/eliminar-negocio/eliminar-negocio.component';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -23,6 +24,7 @@ export const routes: Routes = [
     { path: 'perfil', component: VerPerfilComponent},
     { path: 'negocios-perfil', component: NegociosPerfilComponent},
     { path: 'crear-negocio', component: CrearNegocioComponent},
+    { path: 'eliminar-negocio', component: EliminarNegocioComponent},
     { path: 'eventos-perfil', component: EventosPerfilComponent},
     { path: 'crear-evento', component: CrearEventoComponent},
     { path: 'negocios-perfil-moderador', component: NegociosPerfilModeradorComponent},
