@@ -1,7 +1,7 @@
-import { Horario } from "./horario";
-import { Ubicacion } from "./ubicacion";
+import { Horario } from "../horario";
+import { Ubicacion } from "../ubicacion";
 
-export class RegistroNegocioDTO {
+export class AgregarNegocioDTO {
     constructor(
         public nombre: string = '',
         public descripcion: string = '',
