@@ -14,11 +14,11 @@ export class TarjetaNegocioComponent {
 
   constructor(private negocioService: NegociosService) {
       this.negocios = [];
-      this.listarNegocios();
+      /// this.listarNegocios();
   }
 
-  public listarNegocios() {
-      this.negocios = this.negocioService.listar();
-  }
+  /*public listarNegocios() {
+      this.negocios = this.negocioService.listarNegociosPropietario();
+  }*/
 
 }

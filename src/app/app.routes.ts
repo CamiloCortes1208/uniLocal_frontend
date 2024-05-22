@@ -17,6 +17,7 @@ import { RecuperarPasswordComponent } from './componentes/recuperar-password/rec
 import { RestablecerPasswordComponent } from './componentes/restablecer-password/restablecer-password.component';
 import { EliminarPerfilComponent } from './componentes/eliminar-perfil/eliminar-perfil.component';
 import { ActualizarNegocioComponent } from './componentes/actualizar-negocio/actualizar-negocio.component';
+import { LoginGuard } from './servicios/permiso/permiso.service';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -38,5 +39,7 @@ export const routes: Routes = [
     { path: 'negocios-perfil-moderador', component: NegociosPerfilModeradorComponent},
     { path: 'rechazar-negocio', component: RechazarNegocioComponent},
     { path: "**", pathMatch: "full", redirectTo: "" },
-    { path: "busqueda/:texto", component: BusquedaComponent }
+    { path: "busqueda/:texto", component: BusquedaComponent },
+    { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
+    { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] }
 ];

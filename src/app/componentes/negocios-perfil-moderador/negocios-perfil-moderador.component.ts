@@ -4,6 +4,7 @@ import { ItemNegocioDTO } from '../../dto/negocioDTO/item-negocio-dto';
 import { RechazarNegocioComponent } from "../rechazar-negocio/rechazar-negocio.component";
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { TokenService } from '../../servicios/token/token.service';
 
 @Component({
     selector: 'app-negocios-perfil-moderador',
@@ -15,13 +16,21 @@ import { RouterLink } from '@angular/router';
 export class NegociosPerfilModeradorComponent {
   negocios: ItemNegocioDTO[];
 
-  constructor(private negocioService: NegociosService) {
+  constructor(private negocioService: NegociosService, private tokenService: TokenService) {
     this.negocios = [];
     this.listarNegocios();
   }
   
   public listarNegocios() {
-    this.negocios = this.negocioService.listar();
-  }
+    const codigoCliente = this.tokenService.getCodigo();
+    this.negocioService.listarNegociosPropietario(codigoCliente).subscribe({
+        next: (data) => {
+            this.negocios = data.respuesta;
+        },
+        error: (error) => {
+            console.error(error);
+        }
+    });
+}
   
 }

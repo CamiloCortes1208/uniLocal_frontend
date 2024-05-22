@@ -4,7 +4,7 @@
         
         <div class="card-body">
             
-            <form #f="ngForm" (ngSubmit)="ingresar()">
+            <form #f="ngForm" (ngSubmit)="login()">
                 
                 <div class="text-center">
                     <h3 class="card-title">Inicio de sesión</h3>
@@ -29,7 +29,7 @@
                     <button class="btn btn-primary m-2 " type="submit">Ingresar</button>
 
                     <p>¿Nuevo en la aplicación?</p>  
-    
+                    <app-alerta [alerta]="alerta"></app-alerta>
                     <button type="button" class="btn btn-primary m-2 " routerLink="/registro">Registrarse</button>
     
                 </div>

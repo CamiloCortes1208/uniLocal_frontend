@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TokenService } from '../../servicios/token/token.service';
 
 @Component({
   selector: 'app-header-cliente',
@@ -11,4 +12,9 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderClienteComponent {
 
+    constructor(private tokenService: TokenService){}
+
+    public logout(){
+      this.tokenService.logout()
+    }
 }
