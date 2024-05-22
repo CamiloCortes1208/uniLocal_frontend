@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NegociosService } from '../../servicios/negocios.service';
-import { ItemNegocioDTO } from '../../dto/item-negocio-dto';
+import { ItemNegocioDTO } from '../../dto/negocioDTO/item-negocio-dto';
 import { RechazarNegocioComponent } from "../rechazar-negocio/rechazar-negocio.component";
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';

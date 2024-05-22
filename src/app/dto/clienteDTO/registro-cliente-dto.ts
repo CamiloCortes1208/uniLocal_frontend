@@ -5,7 +5,7 @@ export class RegistroClienteDTO {
         public nickname: string = '',
         public email: string = '',
         public password: string = '',
-        public confirmaPassword: string = '',
+        public confirmarPassword: string = '',
         public ciudadResidencia: string = ''
     ) { }
 }

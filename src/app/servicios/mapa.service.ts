@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import mapboxgl from 'mapbox-gl';
-import { ItemNegocioDTO } from '../dto/item-negocio-dto';
+import { ItemNegocioDTO } from '../dto/negocioDTO/item-negocio-dto';
 @Injectable({
   providedIn: 'root'
 })

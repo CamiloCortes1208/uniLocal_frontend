@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MapaService } from '../../servicios/mapa.service';
 import { Router } from '@angular/router';
-import { RegistroNegocioDTO } from '../../dto/registro-negocio-dto';
+import { AgregarNegocioDTO } from '../../dto/negocioDTO/agregar-negocio-dto';
 
 @Component({
   selector: 'app-crear-negocio',
@@ -12,10 +12,10 @@ import { RegistroNegocioDTO } from '../../dto/registro-negocio-dto';
 })
 export class CrearNegocioComponent implements OnInit {
 
-  registroNegocioDTO: RegistroNegocioDTO;
+  registroNegocioDTO: AgregarNegocioDTO;
 
   constructor(private mapaService: MapaService, private router: Router) { 
-    this.registroNegocioDTO = new RegistroNegocioDTO();
+    this.registroNegocioDTO = new AgregarNegocioDTO();
   }
   
   ngOnInit(): void {

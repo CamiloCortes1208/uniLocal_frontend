@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ItemNegocioDTO } from '../dto/item-negocio-dto';
-import { RegistroNegocioDTO } from '../dto/negocioDTO/registro-negocio-dto';
+import { ItemNegocioDTO } from '../dto/negocioDTO/item-negocio-dto';
+import { AgregarNegocioDTO } from '../dto/negocioDTO/agregar-negocio-dto';
 import { Ubicacion } from '../dto/ubicacion';
+import { Horario } from '../dto/horario';
 
 @Injectable({
   providedIn: 'root'
@@ -13,20 +14,22 @@ export class NegociosService {
 
   constructor() {
     this.negocios = [];
-    
-    this.negocios.push(new ItemNegocioDTO('1', 'Bar Armenia', 'Ven y conoce el mejor bar de la ciudad',
-    'https://picsum.photos/100', 'BAR', new Ubicacion(4.531456060381842,
-         -75.68035469963664), 4.5, 'APROBADO'));
 
-    this.negocios.push(new ItemNegocioDTO('2', 'Restaurante La Casona', 'Ven y conoce el mejor restaurante de la ciudad',
-    'https://picsum.photos/100', 'RESTAURANTE', new Ubicacion(4.551298538672697, -75.65858458442557), 4.0, 'APROBADO'));
+    this.negocios.push(new ItemNegocioDTO('1', 'c1','Bar Armenia', 'Ven y conoce el mejor bar de la ciudad',
+    'BAR','APROBADO',new Ubicacion(4.531456060381842,
+      -75.68035469963664),0, ['12345123'],['https://picsum.photos/100'], [new Horario()], 'ACTIVO' ));
 
-    this.negocios.push(new ItemNegocioDTO('3', 'Peluquería La 33', 'Ven y conoce la mejor peluquería de la ciudad'
-    ,'https://picsum.photos/100','PELUQUERIA', new Ubicacion(4.541984423452234, -75.68579829641877), 4.0, 'RECHAZADO'));
+    this.negocios.push(new ItemNegocioDTO('1', 'c1','Bar Armenia', 'Ven y conoce el mejor bar de la ciudad',
+    'BAR','APROBADO',new Ubicacion(4.531456060381842,
+      -75.68035469963664),0, ['12345123'],['https://picsum.photos/100'], [new Horario()], 'ACTIVO' ));
 
-    this.negocios.push(new ItemNegocioDTO('4', 'Veterinaria Los Amigos',
-    'Ven y conoce la mejor veterinaria de la ciudad','https://picsum.photos/100', 'VETERINARIA',
-     new Ubicacion(4.539872786267409, -75.65011488244343), 4.0, 'APROBADO'));
+    this.negocios.push(new ItemNegocioDTO('1', 'c1','Bar Armenia', 'Ven y conoce el mejor bar de la ciudad',
+    'BAR','APROBADO',new Ubicacion(4.531456060381842,
+      -75.68035469963664),0, ['12345123'],['https://picsum.photos/100'], [new Horario()], 'ACTIVO' ));
+
+    this.negocios.push(new ItemNegocioDTO('1', 'c1','Bar Armenia', 'Ven y conoce el mejor bar de la ciudad',
+    'BAR','APROBADO',new Ubicacion(4.531456060381842,
+      -75.68035469963664),0, ['12345123'],['https://picsum.photos/100'], [new Horario()], 'ACTIVO' ));
   }
 
   public listar(): ItemNegocioDTO[] {
@@ -37,10 +40,10 @@ export class NegociosService {
     return this.negocios.find(negocios => negocios.codigoNegocio == codigo);
   }
 
-  public crear(negocioNuevo: RegistroNegocioDTO) {
+  public crear(negocioNuevo: AgregarNegocioDTO) {
     const codigo = (this.negocios.length + 1).toString();
-    this.negocios.push(new ItemNegocioDTO(codigo, negocioNuevo.nombre,
-      negocioNuevo.imagenes[0], negocioNuevo.tipoNegocio, negocioNuevo.descripcion, negocioNuevo.ubicacion, 0, 'PENDIENTE'));
+    this.negocios.push(new ItemNegocioDTO(codigo, negocioNuevo.codigoCliente, negocioNuevo.nombre,
+      negocioNuevo.descripcion,negocioNuevo.tipoNegocio,'APROBADO',negocioNuevo.ubicacion,0,negocioNuevo.telefonos,negocioNuevo.imagenes,negocioNuevo.horarios,'ACTIVO'));
   }
 
   public eliminar(codigo: string) {

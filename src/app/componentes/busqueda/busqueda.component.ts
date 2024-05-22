@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MapaService } from '../../servicios/mapa.service';
-import { ItemNegocioDTO } from '../../dto/item-negocio-dto';
+import { ItemNegocioDTO } from '../../dto/negocioDTO/item-negocio-dto';
 import { ActivatedRoute } from '@angular/router';
 import { NegociosService } from '../../servicios/negocios.service';
 
