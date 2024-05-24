@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MapaService } from '../../servicios/mapa.service';
 import { Router } from '@angular/router';
-import { LocationInfoComponent } from "../location-info/location-info.component";
 
 @Component({
     selector: 'app-inicio',
     standalone: true,
     templateUrl: './inicio.component.html',
     styleUrl: './inicio.component.css',
-    imports: [LocationInfoComponent]
+    imports: []
 })
 export class InicioComponent implements OnInit {
 

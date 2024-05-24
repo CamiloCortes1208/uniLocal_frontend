@@ -12,12 +12,12 @@
     <div class="row align-items-start">
         <div class="col">
             <h3>Negocios publicados</h3>
-            <div class="container text-start">
+            <div class="container text-start" >
                 @for (item of negocios; track $index) {
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
+                            <img [src]="item.listaRutasImagenes[0]" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -28,9 +28,9 @@
                                 </p>
                                 <div class="d-flex justify-content-end">
                                     <!-- Esta línea establece la alineación de los botones a la derecha -->
-                                    <button type="button" class="btn btn-primary mx-1" routerLink="/actualizar-negocio">Actualizar</button>
+                                    <button type="button" class="btn btn-primary mx-1" [routerLink]="['/actualizar-negocio', item.codigoNegocio]">Actualizar</button>
                                     <!-- mx-1 agrega un pequeño espacio entre botones -->
-                                    <button type="button" class="btn btn-secondary mx-1" routerLink="/eliminar-negocio">Eliminar</button>
+                                    <button type="button" class="btn btn-secondary mx-1" [routerLink]="['/eliminar-negocio', item.codigoNegocio]">Eliminar</button>
                                     <button type="button" class="btn btn-danger mx-1">Responder comentarios</button>
                                 </div>
                             </div>
@@ -43,11 +43,11 @@
         <div class="col">
             <h3>Negocios rechazados</h3>
             <div class="container text-start">
-                @for (item of negocios; track $index) {
+                @for (item of negociosRechazados; track $index) {
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
+                            <img [src]="item.listaRutasImagenes[0]" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -58,7 +58,7 @@
                                 </p>
                                 <div class="d-flex justify-content-end">
                                     <!-- Esta línea establece la alineación de los botones a la derecha -->
-                                    <button type="button" class="btn btn-primary mx-1">Realizar cambios</button>
+                                    <button type="button" class="btn btn-primary mx-1" [routerLink]="['/actualizar-negocio', item.codigoNegocio]">Realizar cambios</button>
                                 </div>
                             </div>
                         </div>

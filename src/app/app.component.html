@@ -1,5 +1,74 @@
 <header>
-  <p><app-header-cliente></app-header-cliente></p>
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+      </a>
+      <ul class="dropdown-menu text-small shadow">
+        <li><a class="dropdown-item active" routerLink="/inicio" aria-current="page">Mapa</a></li>
+        <li><a class="dropdown-item" routerLink="/muro">Muro</a></li>
+        <li><a class="dropdown-item" routerLink="/sitios-destacados">Sitios destacados</a></li>
+        <li><a class="dropdown-item" routerLink="/eventos">Eventos</a></li>
+
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center">
+
+      <form role="search" (submit)="iraBusqueda(textoBusqueda.value)">
+        <div class="input-group">
+            <input #textoBusqueda type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+            <button type="button" class="btn btn-primary ">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </form>
+      <form class="me-2" role="search">
+        <input type="search" class="form-control" placeholder="Distancia del negocio..." aria-label="Search field 2">
+      </form>
+
+      <form class="me-2" role="search">
+        <select class="form-control" aria-label="Categoría del negocio">
+          <option value="" disabled selected>Categoría del negocio...</option>
+          <option value="restaurant">Restaurante</option>
+          <option value="cafe">Café</option>
+          <option value="store">Tienda</option>
+          <option value="salon">Salón de belleza</option>
+          <option value="gym">Gimnasio</option>
+          <!-- Añade más opciones según sea necesario -->
+        </select>
+      </form>
+    </div>
+
+    <div class="flex-shrink-0 dropdown">
+      <div class="d-flex">
+        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img [src]="fotoPerfil" alt="..." width="32" height="32" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+          <!--Opciones para la vista de cliente-->
+          <li><a class="dropdown-item" routerLink="/perfil">Ver perfil</a></li>
+          <li><a class="dropdown-item" routerLink="/negocios-perfil">Mis negocios</a></li>
+          <li><a class="dropdown-item" routerLink="/eventos-perfil">Mis eventos</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          @if (!isLogged) {
+          <button type="button" routerLink="/login" class="btn btn-outline-primary me-2">Login
+          </button>
+          <button type="button" routerLink="/registro" class="btn btn-primary">Registro</button>
+          }@else {
+          <label class="me-3">Hola {{email}}</label>
+          <button type="button" (click)="logout()" class="btn btn-primary ">Logout</button>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
 </header>
 <router-outlet></router-outlet>
 <footer>

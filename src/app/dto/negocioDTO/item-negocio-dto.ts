@@ -11,9 +11,9 @@ export class ItemNegocioDTO {
         public estadoNegocio: string = '',
         public ubicacion: Ubicacion = new Ubicacion(1,1),
         public visitas: number = 0,
-        public listaTelefonos: string[] = [],
-        public listaRutasImagenes: string[] = [],
-        public listaHorarios: Horario[] = [],
+        public listaTelefonos: string[],
+        public listaRutasImagenes: string[],
+        public listaHorarios: Horario[],
         public estadoRegistro: string = ''
     ){}
 }

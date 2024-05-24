@@ -30,6 +30,7 @@ export class RegistroComponent {
 
   public registrar() {
     if (this.registroClienteDTO.fotoPerfil != "") {
+      console.log(this.registroClienteDTO)
       this.authService.registrarCliente(this.registroClienteDTO).subscribe({
         next: (data) => {
           this.alerta = new Alerta(data.respuesta, "success");
@@ -85,7 +86,6 @@ export class RegistroComponent {
       console.log("Hola")
       this.alerta = new Alerta("Debe seleccionar una imagen y subirla", "danger");
     }
-  }
-
+  } 
 
 }

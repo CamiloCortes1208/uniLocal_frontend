@@ -8,11 +8,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private authURL = "http://localhost:8080/api/auth";
+  private authURL = "https://unilocal-pa.onrender.com/api/auth";
   constructor(private http: HttpClient) { }
 
   public registrarCliente(cliente: RegistroClienteDTO): Observable<MensajeDTO> {
-    console.log("hola")
     return this.http.post<MensajeDTO>(`${this.authURL}/registrar-cliente`, cliente);
   }
 

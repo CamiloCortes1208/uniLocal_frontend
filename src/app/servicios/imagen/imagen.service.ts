@@ -8,7 +8,7 @@ import { ImagenDTO } from '../../dto/imagenDTO/imagen-dto';
 })
 export class ImagenService {
 
-  private imgURL = "http://localhost:8080/api/imagenes";
+  private imgURL = "https://unilocal-pa.onrender.com/api/imagenes";
 
   constructor(private http: HttpClient) { }
 
